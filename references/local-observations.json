@@ -1,0 +1,131 @@
+{
+  "captured_at_utc": "2026-11-12T15:57:42.644819+00:00",
+  "method": "Read complete JSONL records within a per-file byte snapshot; retain only metadata and type counts, not conversation bodies. This is a structural research inventory, separate from the sed+jq analysis reader.",
+  "files": [
+    {
+      "filename": "rollout-2026-11-12T23-35-44-01a1d066-8e9b-77c1-a98b-ef272484e0df.jsonl",
+      "directory": "sessions",
+      "snapshot_bytes": 859923,
+      "complete_lines_inspected": 129,
+      "invalid_lines": 0,
+      "cli_versions": [
+        "0.167.2"
+      ],
+      "history_modes": [
+        "paginated"
+      ],
+      "record_counts": {
+        "session_meta": 2,
+        "event_msg/task_started": 5,
+        "response_item/additional_tools": 2,
+        "response_item/message": 18,
+        "world_state": 2,
+        "turn_context": 5,
+        "response_item/configuration_update": 1,
+        "response_item/custom_tool_call": 14,
+        "response_item/custom_tool_call_output": 14,
+        "response_item/reasoning": 12,
+        "event_msg/task_complete": 4,
+        "response_item/function_call": 1,
+        "event_msg/turn_aborted": 1,
+        "event_msg/thread_settings_applied": 1,
+        "inter_agent_communication_metadata": 3,
+        "response_item/agent_message": 3,
+        "event_msg/item_completed": 19,
+        "token_usage_record": 11,
+        "event_msg/token_count": 11
+      },
+      "completed_item_counts": {
+        "Reasoning": 7,
+        "AgentMessage": 3,
+        "CommandExecution": 9
+      },
+      "extension_kind_counts": {}
+    },
+    {
+      "filename": "rollout-2026-11-12T23-39-41-01a1d06a-2b6e-7360-bb30-9ce28cb4ec71.jsonl",
+      "directory": "sessions",
+      "snapshot_bytes": 966545,
+      "complete_lines_inspected": 154,
+      "invalid_lines": 0,
+      "cli_versions": [
+        "0.167.2"
+      ],
+      "history_modes": [
+        "paginated"
+      ],
+      "record_counts": {
+        "session_meta": 1,
+        "event_msg/task_started": 2,
+        "response_item/additional_tools": 1,
+        "response_item/message": 19,
+        "world_state": 2,
+        "turn_context": 2,
+        "event_msg/thread_settings_applied": 2,
+        "event_msg/item_completed": 43,
+        "response_item/custom_tool_call": 16,
+        "token_usage_record": 18,
+        "response_item/custom_tool_call_output": 16,
+        "event_msg/token_count": 18,
+        "response_item/reasoning": 12,
+        "event_msg/task_complete": 2
+      },
+      "completed_item_counts": {
+        "UserMessage": 2,
+        "AgentMessage": 11,
+        "CommandExecution": 18,
+        "Reasoning": 12
+      },
+      "extension_kind_counts": {}
+    },
+    {
+      "filename": "rollout-2026-11-12T23-28-57-01a1d060-59b4-7221-bba2-caf68a7a0e9c.jsonl",
+      "directory": "sessions",
+      "snapshot_bytes": 2925208,
+      "complete_lines_inspected": 391,
+      "invalid_lines": 0,
+      "cli_versions": [
+        "0.167.2"
+      ],
+      "history_modes": [
+        "paginated"
+      ],
+      "record_counts": {
+        "session_meta": 1,
+        "event_msg/task_started": 5,
+        "response_item/additional_tools": 1,
+        "response_item/message": 24,
+        "world_state": 2,
+        "turn_context": 5,
+        "event_msg/thread_settings_applied": 5,
+        "event_msg/item_completed": 138,
+        "response_item/configuration_update": 1,
+        "response_item/custom_tool_call": 35,
+        "token_usage_record": 44,
+        "response_item/custom_tool_call_output": 34,
+        "event_msg/token_count": 45,
+        "response_item/reasoning": 30,
+        "event_msg/task_complete": 4,
+        "response_item/function_call": 5,
+        "response_item/function_call_output": 5,
+        "inter_agent_communication_metadata": 3,
+        "response_item/agent_message": 3,
+        "event_msg/thread_goal_updated": 1
+      },
+      "completed_item_counts": {
+        "UserMessage": 4,
+        "AgentMessage": 13,
+        "CommandExecution": 37,
+        "Reasoning": 30,
+        "Extension": 7,
+        "SubAgentActivity": 6,
+        "FileChange": 15,
+        "CollabAgentToolCall": 2,
+        "McpToolCall": 24
+      },
+      "extension_kind_counts": {
+        "web.search": 7
+      }
+    }
+  ]
+}

@@ -1,0 +1,1114 @@
+{
+  "reference_version": "rust-v0.167.2",
+  "checked_date": "2026-11-12",
+  "scope": "Version-pinned wire-name inventory, not a JSON Schema validator or a guarantee for other releases. Persistence labels describe the live append policy in this tag.",
+  "sources": {
+    "history-rollout_payload.rs": {
+      "url": "https://github.com/openai/codex/blob/rust-v0.167.2/codex-rs/history/src/rollout_payload.rs",
+      "sha256": "d35613b3d803a9964765e12a55a327cf1b56b05e1ab05f7ec2e5ddbb91e96e37"
+    },
+    "history-lib.rs": {
+      "url": "https://github.com/openai/codex/blob/rust-v0.167.2/codex-rs/history/src/lib.rs",
+      "sha256": "70d5713e01459aeb8e8e7b2957e502847726ca1947cfafded9f64647d532945c"
+    },
+    "models.rs": {
+      "url": "https://github.com/openai/codex/blob/rust-v0.167.2/codex-rs/protocol/src/models.rs",
+      "sha256": "bc9ceb266061fca8de68446fddc901c0fcc2bee85209c51364555b9fb44cc6a2"
+    },
+    "protocol.rs": {
+      "url": "https://github.com/openai/codex/blob/rust-v0.167.2/codex-rs/protocol/src/protocol.rs",
+      "sha256": "9b1e9bb5204f0533cbf2d1d547549ef6a864482fc985f906ed9e8b8da02c426a"
+    },
+    "items.rs": {
+      "url": "https://github.com/openai/codex/blob/rust-v0.167.2/codex-rs/protocol/src/items.rs",
+      "sha256": "e2433f837e0ee6fb62ef0b3856559dc650f518f799e580ea9ec94e19b312f051"
+    },
+    "policy.rs": {
+      "url": "https://github.com/openai/codex/blob/rust-v0.167.2/codex-rs/rollout/src/policy.rs",
+      "sha256": "4847e9e3ca59031f4cd386b79b24608ac0ae6811eaf481ccb45ebb902e34f49d"
+    },
+    "realtime.rs": {
+      "url": "https://github.com/openai/codex/blob/rust-v0.167.2/codex-rs/protocol/src/realtime.rs",
+      "sha256": "d93bcd5a05241543c7c1183d342409caaf8aec370165c9d1d0eb9bea6a13cdcb"
+    },
+    "retained_context.rs": {
+      "url": "https://github.com/openai/codex/blob/rust-v0.167.2/codex-rs/history/src/retained_context.rs",
+      "sha256": "153ff3b30066edf1ed6a9c94f23304cb815993010033d176233d780fbfb1be70"
+    },
+    "extension-items.rs": {
+      "url": "https://github.com/openai/codex/blob/rust-v0.167.2/codex-rs/ext/items/src/lib.rs",
+      "sha256": "49ccc5d145779dff6e96751137b11dcc08cb637b0ba568fb73873113fd35dafd"
+    },
+    "security_risk.rs": {
+      "url": "https://github.com/openai/codex/blob/rust-v0.167.2/codex-rs/protocol/src/security_risk.rs",
+      "sha256": "9fd7bcc7ea018c04dec39e224d3189d77f7800fba863fbe6bca6ed9362f07d64"
+    },
+    "recorder.rs": {
+      "url": "https://github.com/openai/codex/blob/rust-v0.167.2/codex-rs/rollout/src/recorder.rs",
+      "sha256": "8ee0b76f20197ac772fc0695e6621cdd1396340b438c228f3bcf3089e0384c86"
+    }
+  },
+  "catalog": {
+    "outer_types": [
+      {
+        "rust_variant": "SessionMeta",
+        "wire_name": "session_meta",
+        "source_line": 34,
+        "persistence": "durable"
+      },
+      {
+        "rust_variant": "DynamicToolsUpdated",
+        "wire_name": "dynamic_tools_updated",
+        "source_line": 37,
+        "persistence": "durable"
+      },
+      {
+        "rust_variant": "ResponseItem",
+        "wire_name": "response_item",
+        "source_line": 40,
+        "persistence": "filtered_payload"
+      },
+      {
+        "rust_variant": "InterAgentCommunication",
+        "wire_name": "inter_agent_communication",
+        "source_line": 45,
+        "persistence": "durable"
+      },
+      {
+        "rust_variant": "InterAgentCommunicationMetadata",
+        "wire_name": "inter_agent_communication_metadata",
+        "source_line": 48,
+        "persistence": "durable"
+      },
+      {
+        "rust_variant": "Compacted",
+        "wire_name": "compacted",
+        "source_line": 51,
+        "persistence": "durable"
+      },
+      {
+        "rust_variant": "TurnContext",
+        "wire_name": "turn_context",
+        "source_line": 54,
+        "persistence": "durable"
+      },
+      {
+        "rust_variant": "TokenUsageRecord",
+        "wire_name": "token_usage_record",
+        "source_line": 57,
+        "persistence": "durable"
+      },
+      {
+        "rust_variant": "WorldState",
+        "wire_name": "world_state",
+        "source_line": 60,
+        "persistence": "durable"
+      },
+      {
+        "rust_variant": "RetainedContext",
+        "wire_name": "retained_context",
+        "source_line": 63,
+        "persistence": "durable"
+      },
+      {
+        "rust_variant": "SecurityRiskScore",
+        "wire_name": "security_risk_score",
+        "source_line": 66,
+        "persistence": "durable"
+      },
+      {
+        "rust_variant": "EventMsg",
+        "wire_name": "event_msg",
+        "source_line": 69,
+        "persistence": "filtered_payload"
+      },
+      {
+        "rust_variant": "RealtimeItem",
+        "wire_name": "realtime_item",
+        "source_line": 72,
+        "persistence": "paginated_only"
+      }
+    ],
+    "response_item_types": [
+      {
+        "rust_variant": "AdditionalTools",
+        "wire_name": "additional_tools",
+        "source_line": 1063,
+        "persistence": "durable"
+      },
+      {
+        "rust_variant": "Message",
+        "wire_name": "message",
+        "source_line": 1072,
+        "persistence": "durable"
+      },
+      {
+        "rust_variant": "AgentMessage",
+        "wire_name": "agent_message",
+        "source_line": 1094,
+        "persistence": "durable"
+      },
+      {
+        "rust_variant": "Reasoning",
+        "wire_name": "reasoning",
+        "source_line": 1105,
+        "persistence": "durable"
+      },
+      {
+        "rust_variant": "LocalShellCall",
+        "wire_name": "local_shell_call",
+        "source_line": 1118,
+        "persistence": "durable"
+      },
+      {
+        "rust_variant": "FunctionCall",
+        "wire_name": "function_call",
+        "source_line": 1134,
+        "persistence": "durable"
+      },
+      {
+        "rust_variant": "ToolSearchCall",
+        "wire_name": "tool_search_call",
+        "source_line": 1160,
+        "persistence": "durable"
+      },
+      {
+        "rust_variant": "FunctionCallOutput",
+        "wire_name": "function_call_output",
+        "source_line": 1183,
+        "persistence": "durable"
+      },
+      {
+        "rust_variant": "CustomToolCall",
+        "wire_name": "custom_tool_call",
+        "source_line": 1203,
+        "persistence": "durable"
+      },
+      {
+        "rust_variant": "CustomToolCallOutput",
+        "wire_name": "custom_tool_call_output",
+        "source_line": 1227,
+        "persistence": "durable"
+      },
+      {
+        "rust_variant": "ToolSearchOutput",
+        "wire_name": "tool_search_output",
+        "source_line": 1242,
+        "persistence": "durable"
+      },
+      {
+        "rust_variant": "WebSearchCall",
+        "wire_name": "web_search_call",
+        "source_line": 1263,
+        "persistence": "durable"
+      },
+      {
+        "rust_variant": "ImageGenerationCall",
+        "wire_name": "image_generation_call",
+        "source_line": 1289,
+        "persistence": "durable"
+      },
+      {
+        "rust_variant": "Compaction",
+        "wire_name": "compaction",
+        "source_line": 1306,
+        "persistence": "durable",
+        "aliases": [
+          "compaction_summary"
+        ]
+      },
+      {
+        "rust_variant": "ConfigurationUpdate",
+        "wire_name": "configuration_update",
+        "source_line": 1316,
+        "persistence": "durable"
+      },
+      {
+        "rust_variant": "CompactionTrigger",
+        "wire_name": "compaction_trigger",
+        "source_line": 1320,
+        "persistence": "excluded"
+      },
+      {
+        "rust_variant": "ContextCompaction",
+        "wire_name": "context_compaction",
+        "source_line": 1321,
+        "persistence": "durable"
+      },
+      {
+        "rust_variant": "Other",
+        "wire_name": "other",
+        "source_line": 1333,
+        "persistence": "excluded",
+        "note": "Serde fallback for unknown variants; preserve original type when analyzing raw JSON."
+      }
+    ],
+    "event_msg_types": [
+      {
+        "rust_variant": "Error",
+        "wire_name": "error",
+        "source_line": 1520,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "Warning",
+        "wire_name": "warning",
+        "source_line": 1524,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "AuthRecoveryStarted",
+        "wire_name": "auth_recovery_started",
+        "source_line": 1527,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "AuthRecoveryCompleted",
+        "wire_name": "auth_recovery_completed",
+        "source_line": 1530,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "GuardianWarning",
+        "wire_name": "guardian_warning",
+        "source_line": 1533,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "RealtimeConversationStarted",
+        "wire_name": "realtime_conversation_started",
+        "source_line": 1536,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "RealtimeConversationRealtime",
+        "wire_name": "realtime_conversation_realtime",
+        "source_line": 1539,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "RealtimeConversationClosed",
+        "wire_name": "realtime_conversation_closed",
+        "source_line": 1542,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "RealtimeConversationSdp",
+        "wire_name": "realtime_conversation_sdp",
+        "source_line": 1545,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "ModelReroute",
+        "wire_name": "model_reroute",
+        "source_line": 1548,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "ModelVerification",
+        "wire_name": "model_verification",
+        "source_line": 1551,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "TurnModerationMetadata",
+        "wire_name": "turn_moderation_metadata",
+        "source_line": 1554,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "SafetyBuffering",
+        "wire_name": "safety_buffering",
+        "source_line": 1557,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "ContextCompacted",
+        "wire_name": "context_compacted",
+        "source_line": 1560,
+        "persistence": "legacy_only"
+      },
+      {
+        "rust_variant": "ThreadRolledBack",
+        "wire_name": "thread_rolled_back",
+        "source_line": 1564,
+        "persistence": "durable"
+      },
+      {
+        "rust_variant": "TurnStarted",
+        "wire_name": "task_started",
+        "source_line": 1569,
+        "aliases": [
+          "turn_started"
+        ],
+        "persistence": "durable"
+      },
+      {
+        "rust_variant": "ThreadSettingsApplied",
+        "wire_name": "thread_settings_applied",
+        "source_line": 1573,
+        "persistence": "durable"
+      },
+      {
+        "rust_variant": "TurnComplete",
+        "wire_name": "task_complete",
+        "source_line": 1578,
+        "aliases": [
+          "turn_complete"
+        ],
+        "persistence": "durable"
+      },
+      {
+        "rust_variant": "TokenCount",
+        "wire_name": "token_count",
+        "source_line": 1582,
+        "persistence": "durable"
+      },
+      {
+        "rust_variant": "AgentMessage",
+        "wire_name": "agent_message",
+        "source_line": 1585,
+        "persistence": "legacy_only"
+      },
+      {
+        "rust_variant": "UserMessage",
+        "wire_name": "user_message",
+        "source_line": 1588,
+        "persistence": "legacy_only"
+      },
+      {
+        "rust_variant": "AgentReasoning",
+        "wire_name": "agent_reasoning",
+        "source_line": 1591,
+        "persistence": "legacy_only"
+      },
+      {
+        "rust_variant": "AgentReasoningRawContent",
+        "wire_name": "agent_reasoning_raw_content",
+        "source_line": 1594,
+        "persistence": "legacy_only"
+      },
+      {
+        "rust_variant": "AgentReasoningSectionBreak",
+        "wire_name": "agent_reasoning_section_break",
+        "source_line": 1597,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "SessionConfigured",
+        "wire_name": "session_configured",
+        "source_line": 1600,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "EnvironmentConnected",
+        "wire_name": "environment_connected",
+        "source_line": 1603,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "EnvironmentDisconnected",
+        "wire_name": "environment_disconnected",
+        "source_line": 1606,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "ThreadGoalUpdated",
+        "wire_name": "thread_goal_updated",
+        "source_line": 1609,
+        "persistence": "durable"
+      },
+      {
+        "rust_variant": "ThreadQueueChanged",
+        "wire_name": "thread_queue_changed",
+        "source_line": 1612,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "McpStartupUpdate",
+        "wire_name": "mcp_startup_update",
+        "source_line": 1615,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "McpStartupComplete",
+        "wire_name": "mcp_startup_complete",
+        "source_line": 1618,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "McpToolCallBegin",
+        "wire_name": "mcp_tool_call_begin",
+        "source_line": 1620,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "McpToolCallEnd",
+        "wire_name": "mcp_tool_call_end",
+        "source_line": 1622,
+        "persistence": "legacy_only"
+      },
+      {
+        "rust_variant": "WebSearchBegin",
+        "wire_name": "web_search_begin",
+        "source_line": 1624,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "WebSearchEnd",
+        "wire_name": "web_search_end",
+        "source_line": 1626,
+        "persistence": "legacy_only"
+      },
+      {
+        "rust_variant": "ImageGenerationBegin",
+        "wire_name": "image_generation_begin",
+        "source_line": 1628,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "ImageGenerationEnd",
+        "wire_name": "image_generation_end",
+        "source_line": 1630,
+        "persistence": "legacy_only"
+      },
+      {
+        "rust_variant": "ExecCommandBegin",
+        "wire_name": "exec_command_begin",
+        "source_line": 1633,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "ExecCommandOutputDelta",
+        "wire_name": "exec_command_output_delta",
+        "source_line": 1636,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "TerminalInteraction",
+        "wire_name": "terminal_interaction",
+        "source_line": 1639,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "ExecCommandEnd",
+        "wire_name": "exec_command_end",
+        "source_line": 1641,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "ViewImageToolCall",
+        "wire_name": "view_image_tool_call",
+        "source_line": 1644,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "ExecApprovalRequest",
+        "wire_name": "exec_approval_request",
+        "source_line": 1646,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "NetworkApprovalResolved",
+        "wire_name": "network_approval_resolved",
+        "source_line": 1652,
+        "persistence": "not_serializable"
+      },
+      {
+        "rust_variant": "RequestPermissions",
+        "wire_name": "request_permissions",
+        "source_line": 1656,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "RequestUserInput",
+        "wire_name": "request_user_input",
+        "source_line": 1658,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "DynamicToolCallRequest",
+        "wire_name": "dynamic_tool_call_request",
+        "source_line": 1660,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "DynamicToolCallResponse",
+        "wire_name": "dynamic_tool_call_response",
+        "source_line": 1662,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "ElicitationRequest",
+        "wire_name": "elicitation_request",
+        "source_line": 1664,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "ElicitationAbandoned",
+        "wire_name": "elicitation_abandoned",
+        "source_line": 1667,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "ApplyPatchApprovalRequest",
+        "wire_name": "apply_patch_approval_request",
+        "source_line": 1669,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "GuardianAssessment",
+        "wire_name": "guardian_assessment",
+        "source_line": 1672,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "DeprecationNotice",
+        "wire_name": "deprecation_notice",
+        "source_line": 1676,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "StreamError",
+        "wire_name": "stream_error",
+        "source_line": 1680,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "PatchApplyBegin",
+        "wire_name": "patch_apply_begin",
+        "source_line": 1684,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "PatchApplyUpdated",
+        "wire_name": "patch_apply_updated",
+        "source_line": 1687,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "PatchApplyEnd",
+        "wire_name": "patch_apply_end",
+        "source_line": 1690,
+        "persistence": "legacy_only"
+      },
+      {
+        "rust_variant": "TurnDiff",
+        "wire_name": "turn_diff",
+        "source_line": 1692,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "RealtimeConversationListVoicesResponse",
+        "wire_name": "realtime_conversation_list_voices_response",
+        "source_line": 1695,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "PlanUpdate",
+        "wire_name": "plan_update",
+        "source_line": 1697,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "TurnAborted",
+        "wire_name": "turn_aborted",
+        "source_line": 1699,
+        "persistence": "durable"
+      },
+      {
+        "rust_variant": "ShutdownComplete",
+        "wire_name": "shutdown_complete",
+        "source_line": 1702,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "EnteredReviewMode",
+        "wire_name": "entered_review_mode",
+        "source_line": 1705,
+        "persistence": "legacy_only"
+      },
+      {
+        "rust_variant": "ExitedReviewMode",
+        "wire_name": "exited_review_mode",
+        "source_line": 1708,
+        "persistence": "legacy_only"
+      },
+      {
+        "rust_variant": "RawResponseItem",
+        "wire_name": "raw_response_item",
+        "source_line": 1710,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "RawResponseCompleted",
+        "wire_name": "raw_response_completed",
+        "source_line": 1711,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "PrivateSessionEvent",
+        "wire_name": "private_session_event",
+        "source_line": 1717,
+        "persistence": "not_serializable"
+      },
+      {
+        "rust_variant": "ItemStarted",
+        "wire_name": "item_started",
+        "source_line": 1719,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "ItemCompleted",
+        "wire_name": "item_completed",
+        "source_line": 1720,
+        "persistence": "conditional_item_completed"
+      },
+      {
+        "rust_variant": "HookStarted",
+        "wire_name": "hook_started",
+        "source_line": 1721,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "HookCompleted",
+        "wire_name": "hook_completed",
+        "source_line": 1722,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "AgentMessageContentDelta",
+        "wire_name": "agent_message_content_delta",
+        "source_line": 1724,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "PlanDelta",
+        "wire_name": "plan_delta",
+        "source_line": 1725,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "ReasoningContentDelta",
+        "wire_name": "reasoning_content_delta",
+        "source_line": 1726,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "ReasoningRawContentDelta",
+        "wire_name": "reasoning_raw_content_delta",
+        "source_line": 1727,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "CollabAgentSpawnBegin",
+        "wire_name": "collab_agent_spawn_begin",
+        "source_line": 1730,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "CollabAgentSpawnEnd",
+        "wire_name": "collab_agent_spawn_end",
+        "source_line": 1732,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "CollabAgentInteractionBegin",
+        "wire_name": "collab_agent_interaction_begin",
+        "source_line": 1734,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "CollabAgentInteractionEnd",
+        "wire_name": "collab_agent_interaction_end",
+        "source_line": 1736,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "CollabWaitingBegin",
+        "wire_name": "collab_waiting_begin",
+        "source_line": 1738,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "CollabWaitingEnd",
+        "wire_name": "collab_waiting_end",
+        "source_line": 1740,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "CollabCloseBegin",
+        "wire_name": "collab_close_begin",
+        "source_line": 1742,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "CollabCloseEnd",
+        "wire_name": "collab_close_end",
+        "source_line": 1744,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "CollabResumeBegin",
+        "wire_name": "collab_resume_begin",
+        "source_line": 1746,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "CollabResumeEnd",
+        "wire_name": "collab_resume_end",
+        "source_line": 1748,
+        "persistence": "transient"
+      },
+      {
+        "rust_variant": "SubAgentActivity",
+        "wire_name": "sub_agent_activity",
+        "source_line": 1751,
+        "persistence": "legacy_noncompleted_only"
+      }
+    ],
+    "turn_item_types": [
+      {
+        "rust_variant": "UserMessage",
+        "wire_name": "UserMessage",
+        "source_line": 51
+      },
+      {
+        "rust_variant": "FunctionCallOutput",
+        "wire_name": "FunctionCallOutput",
+        "source_line": 52
+      },
+      {
+        "rust_variant": "HookPrompt",
+        "wire_name": "HookPrompt",
+        "source_line": 53
+      },
+      {
+        "rust_variant": "AgentMessage",
+        "wire_name": "AgentMessage",
+        "source_line": 54
+      },
+      {
+        "rust_variant": "Plan",
+        "wire_name": "Plan",
+        "source_line": 55
+      },
+      {
+        "rust_variant": "Reasoning",
+        "wire_name": "Reasoning",
+        "source_line": 56
+      },
+      {
+        "rust_variant": "CommandExecution",
+        "wire_name": "CommandExecution",
+        "source_line": 57
+      },
+      {
+        "rust_variant": "DynamicToolCall",
+        "wire_name": "DynamicToolCall",
+        "source_line": 58
+      },
+      {
+        "rust_variant": "CollabAgentToolCall",
+        "wire_name": "CollabAgentToolCall",
+        "source_line": 59
+      },
+      {
+        "rust_variant": "SubAgentActivity",
+        "wire_name": "SubAgentActivity",
+        "source_line": 60
+      },
+      {
+        "rust_variant": "WebSearch",
+        "wire_name": "WebSearch",
+        "source_line": 65
+      },
+      {
+        "rust_variant": "ImageView",
+        "wire_name": "ImageView",
+        "source_line": 66
+      },
+      {
+        "rust_variant": "Extension",
+        "wire_name": "Extension",
+        "source_line": 71
+      },
+      {
+        "rust_variant": "ImageGeneration",
+        "wire_name": "ImageGeneration",
+        "source_line": 76
+      },
+      {
+        "rust_variant": "EnteredReviewMode",
+        "wire_name": "EnteredReviewMode",
+        "source_line": 77
+      },
+      {
+        "rust_variant": "ExitedReviewMode",
+        "wire_name": "ExitedReviewMode",
+        "source_line": 78
+      },
+      {
+        "rust_variant": "FileChange",
+        "wire_name": "FileChange",
+        "source_line": 79
+      },
+      {
+        "rust_variant": "McpToolCall",
+        "wire_name": "McpToolCall",
+        "source_line": 80
+      },
+      {
+        "rust_variant": "ContextCompaction",
+        "wire_name": "ContextCompaction",
+        "source_line": 81
+      }
+    ],
+    "extension_kinds": [
+      {
+        "rust_variant": "ImageGeneration",
+        "wire_name": "image_gen.generation",
+        "source_line": 38
+      },
+      {
+        "rust_variant": "Sleep",
+        "wire_name": "clock.sleep",
+        "source_line": 41
+      },
+      {
+        "rust_variant": "WebSearch",
+        "wire_name": "web.search",
+        "source_line": 44
+      }
+    ],
+    "realtime_item_types": [
+      {
+        "rust_variant": "RealtimeSessionStarted",
+        "wire_name": "realtime_session_started",
+        "source_line": 20
+      },
+      {
+        "rust_variant": "TranscriptSegment",
+        "wire_name": "transcript_segment",
+        "source_line": 21
+      },
+      {
+        "rust_variant": "BemItemPromoted",
+        "wire_name": "bem_item_promoted",
+        "source_line": 25
+      },
+      {
+        "rust_variant": "RealtimeSessionClosed",
+        "wire_name": "realtime_session_closed",
+        "source_line": 30
+      }
+    ],
+    "retained_context_types": [
+      {
+        "rust_variant": "VerifiedAnswer",
+        "wire_name": "verified_answer",
+        "source_line": 148
+      },
+      {
+        "rust_variant": "DeliveredAssistantMessage",
+        "wire_name": "delivered_assistant_message",
+        "source_line": 156,
+        "note": "The inspected serializer writes this as a response_item/message with compatibility delivery metadata, not as retained_context."
+      }
+    ],
+    "message_content_types": [
+      {
+        "rust_variant": "InputText",
+        "wire_name": "input_text",
+        "source_line": 884
+      },
+      {
+        "rust_variant": "InputImage",
+        "wire_name": "input_image",
+        "source_line": 888
+      },
+      {
+        "rust_variant": "InputAudio",
+        "wire_name": "input_audio",
+        "source_line": 895
+      },
+      {
+        "rust_variant": "OutputText",
+        "wire_name": "output_text",
+        "source_line": 899
+      }
+    ],
+    "response_agent_message_content_types": [
+      {
+        "rust_variant": "InputText",
+        "wire_name": "input_text",
+        "source_line": 950
+      },
+      {
+        "rust_variant": "EncryptedContent",
+        "wire_name": "encrypted_content",
+        "source_line": 951
+      }
+    ],
+    "reasoning_summary_types": [
+      {
+        "rust_variant": "SummaryText",
+        "wire_name": "summary_text",
+        "source_line": 2148
+      }
+    ],
+    "reasoning_content_types": [
+      {
+        "rust_variant": "ReasoningText",
+        "wire_name": "reasoning_text",
+        "source_line": 2154
+      },
+      {
+        "rust_variant": "Text",
+        "wire_name": "text",
+        "source_line": 2155
+      }
+    ],
+    "web_search_action_types": [
+      {
+        "rust_variant": "Search",
+        "wire_name": "search",
+        "source_line": 2119
+      },
+      {
+        "rust_variant": "OpenPage",
+        "wire_name": "open_page",
+        "source_line": 2127
+      },
+      {
+        "rust_variant": "FindInPage",
+        "wire_name": "find_in_page",
+        "source_line": 2132
+      },
+      {
+        "rust_variant": "Other",
+        "wire_name": "other",
+        "source_line": 2142
+      }
+    ],
+    "turn_agent_message_content_types": [
+      {
+        "rust_variant": "Text",
+        "wire_name": "Text",
+        "source_line": 135
+      }
+    ],
+    "function_output_content_types": [
+      {
+        "rust_variant": "InputText",
+        "wire_name": "input_text",
+        "source_line": 2263
+      },
+      {
+        "rust_variant": "InputImage",
+        "wire_name": "input_image",
+        "source_line": 2267
+      },
+      {
+        "rust_variant": "InputAudio",
+        "wire_name": "input_audio",
+        "source_line": 2275
+      },
+      {
+        "rust_variant": "EncryptedContent",
+        "wire_name": "encrypted_content",
+        "source_line": 2278
+      }
+    ],
+    "realtime_presentation_types": [
+      {
+        "rust_variant": "WholeItem",
+        "wire_name": "whole_item",
+        "source_line": 56
+      },
+      {
+        "rust_variant": "InlineMarkdown",
+        "wire_name": "inline_markdown",
+        "source_line": 57
+      },
+      {
+        "rust_variant": "InlineVisualization",
+        "wire_name": "inline_visualization",
+        "source_line": 58
+      }
+    ],
+    "local_shell_action_types": [
+      {
+        "rust_variant": "Exec",
+        "wire_name": "exec",
+        "source_line": 2103
+      }
+    ]
+  },
+  "catalog_sources": {
+    "outer_types": {
+      "source_file": "history-rollout_payload.rs",
+      "enum": "RolloutItemWire"
+    },
+    "response_item_types": {
+      "source_file": "models.rs",
+      "enum": "ResponseItem"
+    },
+    "event_msg_types": {
+      "source_file": "protocol.rs",
+      "enum": "EventMsg"
+    },
+    "turn_item_types": {
+      "source_file": "items.rs",
+      "enum": "TurnItem"
+    },
+    "extension_kinds": {
+      "source_file": "extension-items.rs",
+      "enum": "ExtensionItem"
+    },
+    "realtime_item_types": {
+      "source_file": "realtime.rs",
+      "enum": "RealtimeItemContent"
+    },
+    "retained_context_types": {
+      "source_file": "retained_context.rs",
+      "enum": "RetainedContextEvent"
+    },
+    "message_content_types": {
+      "source_file": "models.rs",
+      "enum": "ContentItem"
+    },
+    "response_agent_message_content_types": {
+      "source_file": "models.rs",
+      "enum": "AgentMessageInputContent"
+    },
+    "reasoning_summary_types": {
+      "source_file": "models.rs",
+      "enum": "ReasoningItemReasoningSummary"
+    },
+    "reasoning_content_types": {
+      "source_file": "models.rs",
+      "enum": "ReasoningItemContent"
+    },
+    "web_search_action_types": {
+      "source_file": "models.rs",
+      "enum": "WebSearchAction"
+    },
+    "turn_agent_message_content_types": {
+      "source_file": "items.rs",
+      "enum": "AgentMessageContent"
+    },
+    "function_output_content_types": {
+      "source_file": "models.rs",
+      "enum": "FunctionCallOutputContentItem"
+    },
+    "realtime_presentation_types": {
+      "source_file": "realtime.rs",
+      "enum": "BemItemPresentation"
+    },
+    "local_shell_action_types": {
+      "source_file": "models.rs",
+      "enum": "LocalShellAction"
+    }
+  }
+}
